@@ -2,7 +2,7 @@
 
 **Nama Mahasiswa**: Aida Fitrania Prabasati  
 **NRP**: 5025211033  
-**Judul TA**: Fine-Tuning Model Transformer untuk Pengenalan Emosi pada Lirik Lagu Berbahasa Indonesia Berdasarkan Model Emosi Russell 
+**Judul TA**: Fine-Tuning Model Transformer untuk Pengenalan Emosi pada Lirik Lagu Berbahasa Indonesia Berdasarkan Model Emosi Russell  
 **Dosen Pembimbing**: Ratih Nur Esti Anggraini, S.Kom., M.Sc., Ph.D.  
 **Dosen Ko-pembimbing**: Ir. Adhatus Solichah Ahmadiyah, S.Kom., M.Sc.
 
