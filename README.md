@@ -9,7 +9,6 @@
 ---
 
 ## 📺 Demo Aplikasi  
-Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda):  
 
 [![Demo Aplikasi](https://github.com/Informatics-ITS/ta-aidafitraniaa/blob/main/Overview.png)](https://www.youtube.com/watch?v=seicLEdF4MU)  
 *Klik gambar di atas untuk menonton demo*
@@ -17,6 +16,17 @@ Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda):
 ---
 
 ## Tentang Tugas Akhir
+
+Tugas Akhir ini bertujuan untuk mengeksplorasi dan membandingkan performa tiga model transformer yaitu IndoBERT, RoBERTa, dan DistilBERT dalam tugas klasifikasi emosi pada lirik lagu berbahasa Indonesia. Emosi dikategorikan berdasarkan Model Emosi Russell ke dalam empat kelas: senang, sedih, tenang, dan marah.  
+
+Untuk mengetahui pengaruh preprocessing dan penyeimbangan data, dilakukan fine-tuning ketiga model menggunakan empat skenario berbeda, yaitu:  
+1. Tanpa Oversampling & Full Preprocessing  
+2. Tanpa Oversampling & Tanpa Full Preprocessing ( Tanpa Stopword Removal & Stemming )
+3. Oversampling & Full Preprocessing
+4. Oversampling & Tanpa Full Preprocessing ( Tanpa Stopword Removal & Stemming )
+
+Proses penelitian ini mencakup beberapa tahap utama:  
+[![Demo Aplikasi](https://github.com/Informatics-ITS/ta-aidafitraniaa/blob/main/diagram alir.png)]
 
 
 ## 🛠 Panduan Instalasi & Menjalankan Software  
@@ -61,16 +71,11 @@ Embed video demo di bawah ini (ganti `VIDEO_ID` dengan ID video YouTube Anda):
 
 ## ✅ Validasi
 
-Pastikan proyek memenuhi kriteria berikut sebelum submit:
-- Source code dapat di-build/run tanpa error
-- Video demo jelas menampilkan fitur utama
-- README lengkap dan terupdate
-- Tidak ada data sensitif (password, API key) yang ter-expose
 
 ---
 
 ## ⁉️ Pertanyaan?
 
 Hubungi:
-- Penulis: [email@mahasiswa]
-- Pembimbing Utama: [email@pembimbing]
+- Penulis: [fitraniap78@gmail.com]
+- Pembimbing Utama: [ratih@its.ac.id]
