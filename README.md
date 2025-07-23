@@ -10,12 +10,12 @@
 
 ## 📺 Demo Aplikasi  
 
-[![Demo Aplikasi](./Overview.png)](https://www.youtube.com/watch?v=seicLEdF4MU)  
+[![Demo Aplikasi](./gambar/Overview.png)](https://www.youtube.com/watch?v=seicLEdF4MU)  
 *Klik gambar di atas untuk menonton demo*
 
 ---
 
-## Tentang Tugas Akhir
+## 📚 Tentang Tugas Akhir
 
 Tugas Akhir ini bertujuan untuk mengeksplorasi dan membandingkan performa tiga model transformer yaitu IndoBERT, RoBERTa, dan DistilBERT dalam tugas klasifikasi emosi pada lirik lagu berbahasa Indonesia. Emosi dikategorikan berdasarkan Model Emosi Russell ke dalam empat kelas: senang, sedih, tenang, dan marah.  
 
@@ -27,7 +27,7 @@ Untuk mengetahui pengaruh preprocessing dan penyeimbangan data, dilakukan fine-t
 
 Proses penelitian ini mencakup beberapa tahap utama:  
 
-![Demo Aplikasi](./diagram%20alir.png)
+![DiagramAlirMetodeyangDigunakan](./gambar/diagram%20alir.png)
 
 1. Pengumpulan dan anotasi dataset sebanyak 1.500 lirik lagu pop Indonesia (tahun 2000–2025)
   
@@ -45,49 +45,80 @@ Proses penelitian ini mencakup beberapa tahap utama:
 5. Fine-tuning model transformer
 6. Evaluasi performa model menggunakan 5-Fold Cross Validation dan metrik accuracy, precision, recall, dan F1-score
 
+---
 
-## 🛠 Panduan Instalasi & Menjalankan Software  
+## 🛠 Panduan Fine-Tuning dan Menjalankan Sistem Prediksi Emosi  
 
-### Prasyarat  
-- Daftar dependensi (contoh):
-  - Python 3.10+
-  - Node.js v18+
-  - MySQL 8.0
-  - [Lainnya...]
-
-### Langkah-langkah  
+### Langkah-langkah 
+#### Fine-Tuning Model
 1. **Clone Repository**  
    ```bash
-   git clone https://github.com/Informatics-ITS/TA.git
+   git clone https://github.com/Informatics-ITS/ta-aidafitraniaa.git
    ```
-2. **Instalasi Dependensi**
-   ```bash
-   cd [folder-proyek]
-   pip install -r requirements.txt  # Contoh untuk Python
-   npm install  # Contoh untuk Node.js
-   ```
-3. **Konfigurasi**
-- Salin/rename file .env.example menjadi .env
-- Isi variabel lingkungan sesuai kebutuhan (database, API key, dll.)
-4. **Jalankan Aplikasi**
-   ```bash
-   python main.py  # Contoh untuk Python
-   npm start      # Contoh untuk Node.js
-   ```
-5. Buka browser dan kunjungi: `http://localhost:3000` (sesuaikan dengan port proyek Anda)
+   Pada penelitian ini peneliti menggunakan Google Colab untuk fine-tuning model  
+2. **Persiapan**
+   - Persiapkan dataset yang sudah diunduh dan tempatkan ke dalam direktori sesuai kebutuhan
+   - Agar lebih mudah tempatkan dataset di dalam direktori yang sama dengan file code tiap model
+   - Buat folder masing-masing untuk tiap model per skenarionya, untuk menyimpan hasil dari keseluruhan fine-tuning dan lainnya
+   - Pada file code di setiap model nya, sesuaikan path untuk memanggil dataset, menyimpan hasil, dan memanggil hasil dari tiap proses
+5. **Jalankan Aplikasi**
+   - Jalankan file code dari tiap model
+   - Pastikan menjalankan semua cell code `install` yang ada agar tidak terjadi error
+   - Hasil setiap proses akan muncul di bawah setiap code cell
+6. **Simpan Model Terbaik**
+   - Setelah menjalankan semua skenario di tiap model, tentukan 1 model dengan skenario yang memiliki hasil yang terbaik (f1-score atau accuracy)
+   - Jalankan file code di model dan skenario tersebut dan pastikan pada akhir cell code fine-tuning menambahkan code untuk menyimpan model berdasarkan f1-score atau accuracy terbaik pada salah satu fold
+   - Pastikan setelah menjalankan file code ulang, folder berisi `model.safetensor`, `config`, `special_tokens_map`, `tokenizer_config`, `tokenizer`, dan `vocab` sudah tersimpan
+
+#### Sistem Prediksi Sistem
+1. **Persiapan**
+   - Pastikan sudah mengunduh folder berisi hasil model terbaik
+   - Unduh file python `streamlit_app.py` untuk menjalankan sistem berbasis streamlit
+   - Tempatkan folder model terbaik dan file pyhton streamlit pada direktori yang sama
+3. **Jalankan Sistem**
+   - Buka terminal pada direktori berisi model terbaik dan file python streamlit
+   - Install streamlit terlebih dahulu
+     ```bash
+     pip install streamlit
+     ```
+   - Jalankan file python `streamlit_app.py` pada terminal
+     ```bash
+     streamlit run streamlit_app.py
+     ```
+     Akan diarahkan langsung menuju localhost streamlit sistem kita
+     Jika tidak ada, bisa klik manual link yang muncul di terminal
 
 ---
 
-## 📚 Dokumentasi Tambahan
+## 📚 Hasil Model dengan Skenario Terbaik dan Preview Sistem Prediksi Emosi
 
-- [![Dokumentasi API]](docs/api.md)
-- [![Diagram Arsitektur]](docs/architecture.png)
-- [![Struktur Basis Data]](docs/database_schema.sql)
+### IndoBERT dengan Skenario 2 (Tanpa Oversampling dan Tanpa Full Preprocessing)
 
----
+| Accuracy (%) | Precision (%) | Recall (%) | F1-Score (%) |
+|--------------|---------------|------------|--------------|
+|     68       |      63       |     59     |      60      |
 
-## ✅ Validasi
+Grafik Accuracy dan Loss Fold 5 (Hasil Terbaik)
 
+![GrafikFold5](./gambar/grafik.png)
+
+Confusion Matrix Fold 5 (Hasil Terbaik)
+
+![CMFold5](./gambar/confusion%20matrix.png)
+
+### Sistem Prediksi Emosi
+
+Tampilan Awal
+
+![UIAwal](./gambar/tampilan%20awal.png)
+
+Tampilan Peringatan Input Lirik Lagu
+
+![UIPeringatan](./gambar/tampilan%20peringatan.png)
+
+Tampilan Hasil Prediksi Emosi Lirik Lagu
+
+![UIPrediksi](./gambar/tampilan%20prediksi.png)
 
 ---
 
