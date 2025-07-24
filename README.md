@@ -125,5 +125,5 @@ Tampilan Hasil Prediksi Emosi Lirik Lagu
 ## ⁉️ Pertanyaan?
 
 Hubungi:
-- Penulis: [fitraniap78@gmail.com]
+- Penulis: [5025211033@student.its.ac.id]
 - Pembimbing Utama: [ratih@its.ac.id]
